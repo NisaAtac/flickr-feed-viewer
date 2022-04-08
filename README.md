@@ -17,14 +17,14 @@ Make sure Node and NPM are installed on your computer. You can download both at 
 
 The project consists of two directories: Server folder contains backend related files whereas Client folder contains frontend related ones.
 
-..*Server runs on *http://localhost:5000*, to see what it returns open *http://localhost:5000/api\*
+* Server runs on _http://localhost:5000_, to see what it returns open _http://localhost:5000/api_
 In the server directory, start the server
 
 ## `node server.js`
 
-..\*To start React app, in the client directory, please run:
+* To start React app, in the client directory, please run:
 
 ## `npm run start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open _http://localhost:3000_ to view it in your browser.
