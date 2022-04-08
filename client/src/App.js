@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState, useEffect } from "react";
 import ImageCard from "./components/ImageCard";
 import SearchBar from "./components/SearchBar";
@@ -8,6 +7,7 @@ function App() {
   const [fetchedData, setFetchedData] = useState([]);
   const [, , handleSubmit] = useInputState("");
 
+  // handleSubmit for the initial page load
   useEffect(() => {
     handleSubmit(null, setFetchedData);
   }, []);

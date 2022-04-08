@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 export default (initialVal) => {
+  // setValue is used to update the value
+  // value is initialized as initialVal
   const [value, setValue] = useState(initialVal);
   const handleChange = (e) => {
     setValue(e.target.value);

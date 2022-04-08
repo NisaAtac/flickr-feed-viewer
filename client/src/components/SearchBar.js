@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+// SearchBar component contains the search form elements
+import React from "react";
 import useInputState from "../hooks/useInputState";
 
 const SearchBar = ({ searchData }) => {
-  //to store the input from the search bar
+  // searchTerm is to store the input provided in search bar
+  // updateSearchTerm updates the searchTerm
+  // handleSubmit handles the form submission
+  // searchTerm is initialized as empty
   const [searchTerm, updateSearchTerm, handleSubmit] = useInputState("");
 
   return (
