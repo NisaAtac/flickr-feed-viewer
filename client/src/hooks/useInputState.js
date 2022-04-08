@@ -2,13 +2,12 @@ import { useState } from "react";
 
 export default (initialVal) => {
   const [value, setValue] = useState(initialVal);
-  const [fetchedData, setFetchedData] = useState([]);
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
   // handle submit by fetching data with the corresponding tag value
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, setData) => {
     if (e) {
       e.preventDefault();
     }
@@ -16,9 +15,9 @@ export default (initialVal) => {
       const response = await fetch(`/api?tag=${value}`);
       const responseData = await response.json();
       // update state of responseData
-      setFetchedData(responseData);
+      setData(responseData);
     };
     fetchData();
   };
-  return [value, handleChange, handleSubmit, fetchedData];
+  return [value, handleChange, handleSubmit];
 };

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import useInputState from "../hooks/useInputState";
 
-const SearchBar = ({ searchText }) => {
+const SearchBar = ({ searchData }) => {
   //to store the input from the search bar
-  const [searchTerm, updateSearchTerm, handleSubmit, fetchedData] =
-    useInputState("");
+  const [searchTerm, updateSearchTerm, handleSubmit] = useInputState("");
 
   return (
     <section
@@ -13,7 +12,9 @@ const SearchBar = ({ searchText }) => {
     >
       <form
         action=""
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          handleSubmit(e, searchData);
+        }}
         className="flex input-group relative items-stretch mb-4"
       >
         <input
