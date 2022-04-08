@@ -1,6 +1,6 @@
 // ImageCard component contains image, title and author information
 // If the title or the author is not provided for the image,
-// no title or no author is written on the card, respectively.
+// no title or no author is written on the card.
 import React from "react";
 
 const ImageCard = ({ image, index }) => {

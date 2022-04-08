@@ -3,7 +3,7 @@ import React from "react";
 import useInputState from "../hooks/useInputState";
 
 const SearchBar = ({ searchData }) => {
-  // searchTerm is to store the input provided in search bar
+  // searchTerm is to store the input provided in the search bar
   // updateSearchTerm updates the searchTerm
   // handleSubmit handles the form submission
   // searchTerm is initialized as empty
@@ -32,7 +32,12 @@ const SearchBar = ({ searchData }) => {
           value={searchTerm}
           onChange={updateSearchTerm}
         />
-        <button className="flex items-center px-2 py-2 bg-gray-600 text-white font-medium text-xs leading-tight uppercase shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out">
+        <button
+          className="flex items-center px-2 py-2 bg-gray-600 text-white font-medium text-xs 
+                    leading-tight uppercase shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700  
+                    focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg 
+                    transition duration-150 ease-in-out"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-3 w-3 md:w-5 md:h-5"
