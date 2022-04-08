@@ -3,21 +3,26 @@ const parseString = require("xml2js").parseString;
 const url = `https://api.flickr.com/services/feeds/photos_public.gne?tags=`;
 
 function parse(data) {
-  let obj = { hrefs: [] };
+  let obj = [];
   parseString(data, function (err, result) {
     const entries = result.feed.entry;
-    for (entry of entries) {
+    console.log(entries[0].title);
+    entries.map((entry, i) => {
       const links = entry.link;
+      const title = entry.title[0];
+      const author = entry.author[0].name[0];
       //accessing hrefs
-      for (linkItem of links) {
-        if (
-          linkItem.$.type === "image/jpeg" &&
-          !linkItem.$.href.includes("mp4")
-        ) {
-          obj.hrefs.push(linkItem.$.href);
-        }
+
+      const imageLink = links.filter((linkItem) => {
+        return (
+          linkItem.$.type === "image/jpeg" && !linkItem.$.href.includes("mp4")
+        );
+      });
+
+      if (imageLink) {
+        obj.push({ href: imageLink[0], title: title, author: author });
       }
-    }
+    });
   });
   return obj;
 }
